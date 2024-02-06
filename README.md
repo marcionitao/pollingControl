@@ -1,6 +1,6 @@
-# uploadControl
+# pollingControl
 
-is a backend for upload/download of files what use Cloudflare R3 for management of files
+pollingControl is a backend polling app that communicates in real time via websockts.
 
 ## Technologies
 
@@ -8,6 +8,7 @@ is a backend for upload/download of files what use Cloudflare R3 for management 
 - Node
 - Fastify
 - Prisma
-- gitig
 - Postgres
-- [Cloudflare R3](https://github.com/cloudflare/cloudflare-r3)
+- Redis
+
+## Strategies

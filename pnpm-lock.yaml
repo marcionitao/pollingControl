@@ -5,9 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fastify/formbody':
+    specifier: ^7.4.0
+    version: 7.4.0
+  '@prisma/client':
+    specifier: 5.8.1
+    version: 5.8.1(prisma@5.8.1)
   fastify:
     specifier: ^4.25.2
     version: 4.25.2
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@rocketseat/eslint-config':
@@ -309,6 +318,13 @@ packages:
       fast-json-stringify: 5.10.0
     dev: false
 
+  /@fastify/formbody@7.4.0:
+    resolution: {integrity: sha512-H3C6h1GN56/SMrZS8N2vCT2cZr7mIHzBHzOBa5OPpjfB/D6FzP9mMpE02ZzrFX0ANeh0BAJdoXKOF2e7IbV+Og==}
+    dependencies:
+      fast-querystring: 1.1.2
+      fastify-plugin: 4.5.1
+    dev: false
+
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -355,13 +371,24 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
+  /@prisma/client@5.8.1(prisma@5.8.1):
+    resolution: {integrity: sha512-xQtMPfbIwLlbm0VVIVQY2yqQVOxPwRQhvIp7Z3m2900g1bu/zRHKhYZJQWELqmjl6d8YwBy0K2NvMqh47v1ubw==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.8.1
+    dev: false
+
   /@prisma/debug@5.8.1:
     resolution: {integrity: sha512-tjuw7eA0Us3T42jx9AmAgL58rzwzpFGYc3R7Y4Ip75EBYrKMBA1YihuWMcBC92ILmjlQ/u3p8VxcIE0hr+fZfg==}
-    dev: true
 
   /@prisma/engines-version@5.8.1-1.78caf6feeaed953168c64e15a249c3e9a033ebe2:
     resolution: {integrity: sha512-f5C3JM3l9yhGr3cr4FMqWloFaSCpNpMi58Om22rjD2DOz3owci2mFdFXMgnAGazFPKrCbbEhcxdsRfspEYRoFQ==}
-    dev: true
 
   /@prisma/engines@5.8.1:
     resolution: {integrity: sha512-TJgYLRrZr56uhqcXO4GmP5be+zjCIHtLDK20Cnfg+o9d905hsN065QOL+3Z0zQAy6YD31Ol4u2kzSfRmbJv/uA==}
@@ -371,7 +398,6 @@ packages:
       '@prisma/engines-version': 5.8.1-1.78caf6feeaed953168c64e15a249c3e9a033ebe2
       '@prisma/fetch-engine': 5.8.1
       '@prisma/get-platform': 5.8.1
-    dev: true
 
   /@prisma/fetch-engine@5.8.1:
     resolution: {integrity: sha512-+bgjjoSFa6uYEbAPlklfoVSStOEfcpheOjoBoNsNNSQdSzcwE2nM4Q0prun0+P8/0sCHo18JZ9xqa8gObvgOUw==}
@@ -379,13 +405,11 @@ packages:
       '@prisma/debug': 5.8.1
       '@prisma/engines-version': 5.8.1-1.78caf6feeaed953168c64e15a249c3e9a033ebe2
       '@prisma/get-platform': 5.8.1
-    dev: true
 
   /@prisma/get-platform@5.8.1:
     resolution: {integrity: sha512-wnA+6HTFcY+tkykMokix9GiAkaauPC5W/gg0O5JB0J8tCTNWrqpnQ7AsaGRfkYUbeOIioh6woDjQrGTTRf1Zag==}
     dependencies:
       '@prisma/debug': 5.8.1
-    dev: true
 
   /@rocketseat/eslint-config@2.1.0(eslint@8.56.0)(typescript@5.3.3):
     resolution: {integrity: sha512-E4wdeuDcGtOKXH/hchPabLLsbCqH6yhavyAbGotr7WbzvdBH93+CtTHU5iAdauaQ28EPvFgQNtcebXtfYB0wVg==}
@@ -1473,6 +1497,10 @@ packages:
     resolution: {integrity: sha512-eel5UKGn369gGEWOqBShmFJWfq/xSJvsgDzgLYC845GneayWvXBf0lJCBn5qTABfewy1ZDPoaR5OZCP+kssfuw==}
     dev: false
 
+  /fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
+    dev: false
+
   /fastify@4.25.2:
     resolution: {integrity: sha512-SywRouGleDHvRh054onj+lEZnbC1sBCLkR0UY3oyJwjD4BdZJUrxBqfkfCaqn74pVCwBaRHGuL3nEWeHbHzAfw==}
     dependencies:
@@ -2262,7 +2290,6 @@ packages:
     requiresBuild: true
     dependencies:
       '@prisma/engines': 5.8.1
-    dev: true
 
   /process-warning@2.3.2:
     resolution: {integrity: sha512-n9wh8tvBe5sFmsqlg+XQhaQLumwpqoAUruLwjCopgTmUBjJ/fjtBsJzKleCaIGBOMXYEhp1YfKl4d7rJ5ZKJGA==}
@@ -2806,3 +2833,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false

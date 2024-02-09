@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.25.2"
+    "@fastify/formbody": "^7.4.0",
+    "@prisma/client": "5.8.1",
+    "fastify": "^4.25.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",

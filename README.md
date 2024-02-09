@@ -6,10 +6,12 @@ pollingControl is a backend polling app that communicates in real time via webso
 
 - TypeScript
 - Node
-- Fastify
-- Prisma
-- Postgres
-- Redis
+- Fastify (backend framework)
+- Prisma (ORM)
+- Postgres (database)
+- Redis (data caching)
+- Zod (data validation)
+- WebSocket (communication protocol)
 
 ## Strategies
 

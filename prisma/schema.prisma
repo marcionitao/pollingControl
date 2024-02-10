@@ -11,8 +11,17 @@ datasource db {
 }
 
 model Poll {
-  id        String   @id @default(uuid())
+  id        String       @id @default(uuid())
   title     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @default(now())
+  options   PollOption[]
+}
+
+// para o relacionamento 1 <> N (digitamos apenas poll Poll)
+model PollOption {
+  id     String @id @default(uuid())
+  title  String
+  poll   Poll   @relation(fields: [pollId], references: [id])
+  pollId String
 }

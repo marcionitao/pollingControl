@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/cookie": "^9.3.1",
     "@fastify/formbody": "^7.4.0",
     "@prisma/client": "5.8.1",
     "fastify": "^4.25.2",

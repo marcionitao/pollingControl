@@ -16,6 +16,7 @@ model Poll {
   createdAt DateTime     @default(now())
   updatedAt DateTime     @default(now())
   options   PollOption[]
+  Vote      Vote[]
 }
 
 // para o relacionamento 1 <> N (digitamos apenas poll Poll)
@@ -24,4 +25,20 @@ model PollOption {
   title  String
   poll   Poll   @relation(fields: [pollId], references: [id])
   pollId String
+  Vote   Vote[]
+}
+
+// tabela de votos 1 : 1
+model Vote {
+  id           Int      @id @default(autoincrement())
+  sessionId    String
+  pollOptionId String
+  pollId       String
+  createdAt    DateTime @default(now())
+
+  pollOption PollOption @relation(fields: [pollOptionId], references: [id])
+  poll       Poll       @relation(fields: [pollId], references: [id])
+
+  // a combinação de sessionId e pollId é unica para cada voto
+  @@unique([sessionId, pollId])
 }

@@ -16,7 +16,7 @@ model Poll {
   createdAt DateTime     @default(now())
   updatedAt DateTime     @default(now())
   options   PollOption[]
-  Vote      Vote[]
+  votes     Vote[]
 }
 
 // para o relacionamento 1 <> N (digitamos apenas poll Poll)
@@ -25,7 +25,7 @@ model PollOption {
   title  String
   poll   Poll   @relation(fields: [pollId], references: [id])
   pollId String
-  Vote   Vote[]
+  votes  Vote[]
 }
 
 // tabela de votos 1 : 1
